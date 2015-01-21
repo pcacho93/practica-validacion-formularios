@@ -2,13 +2,14 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Práctica validación formularios</title>
+    <title>validacion_formulario</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -16,11 +17,240 @@
     <!-- endbuild -->
   </head>
   <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-    <div class="hero-unit">
-      <h1>Práctica validación formularios</h1>
-      <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
-    </div>
+
+   
+  <form class="formulario">
+  <fieldset class="fieldeset">
+
+  <!-- Form Name -->
+    <legend>Formulario de validacion</legend>
+      <div class="contacto">
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="nombre">Nombre <span>*</span></label>
+          <div class="controls">
+            <input id="nombre" name="nombre" type="text" placeholder="nombre" class="input-medium" required="">    
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="apel">Apellido <span>*</span></label>
+          <div class="controls">
+            <input id="apel" name="apel" type="text" placeholder="apellido" class="input-medium" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="tel">Teléfono <span>*</span></label>
+          <div class="controls">
+            <input id="tel" name="tel" type="text" placeholder="telefono" class="input-medium" required="">
+            <p class="help-block">9 digitos</p>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="mail">Email <span>*</span></label>
+          <div class="controls">
+            <input id="mail" name="mail" type="text" placeholder="email" class="input-large" required="">
+            <p class="help-block">Inserte un email válido</p>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="mail2">Email<span>*</span></label>
+          <div class="controls">
+            <input id="mail2" name="mail2" type="text" placeholder="mail" class="input-large">
+            <p class="help-block">Inserte de nuevo su email</p>
+          </div>
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="control-group">
+          <label class="control-label" for="find">¿Cómo nos ha encontrado?</label>
+          <div class="controls">
+            <label class="checkbox" for="find-0">
+              <input type="checkbox" name="find" id="find-0" value="No contestar">
+              Prefiero no contestar
+            </label><br>
+            <label class="checkbox" for="find-1">
+              <input type="checkbox" name="find" id="find-1" value="Publicidad">
+              Publicidad
+            </label><br>
+            <label class="checkbox" for="find-2">
+              <input type="checkbox" name="find" id="find-2" value="Profesional del sector">
+              Profesional del sector
+            </label><br>
+            <label class="checkbox" for="find-3">
+              <input type="checkbox" name="find" id="find-3" value="Internet">
+              Internet
+            </label><br>
+            <label class="checkbox" for="find-4">
+              <input type="checkbox" name="find" id="find-4" value="Amigo / conocido">
+              Amigo / conocido
+            </label><br>
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <div class="datos_facturacion">
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="demandante">Demandante <span>*</span></label>
+          <div class="controls">
+            <select id="demandante" name="demandante" class="input-medium">
+              <option>Particular</option>
+              <option>Empresa</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="identificacion">Número de documento <span>*</span></label>
+          <div class="controls">
+            <select id="identificacion" name="identificacion" class="input-small">
+              <option>CIF</option>
+              <option>NIF</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="nombre">Nombre <span>*</span></label>
+          <div class="controls">
+            <select id="nombre" name="nombre" class="input-medium">
+              <option>Nombre</option>
+              <option>Empresa</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="direccion">Dirección <span>*</span></label>
+          <div class="controls">
+            <input id="direccion" name="direccion" type="text" placeholder="Direccion" class="input-xlarge" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="codPostal">Código Postal <span>*</span></label>
+          <div class="controls">
+            <input id="codPostal" name="codPostal" type="text" placeholder="Codigo Postal" class="input-medium" required="">
+            <p class="help-block">5 digitos</p>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="selectbasic">Provincia<span>*</span></label>
+          <div class="controls">
+            <select id="selectbasic" name="selectbasic" class="input-medium">
+              <option>Zaragoza</option>
+              <option>Huesca</option>
+              <option>Teruel</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="selectbasic">Localidad <span>*</span></label>
+          <div class="controls">
+            <select id="selectbasic" name="selectbasic" class="input-medium">
+              <option>Zaragoza</option>
+              <option>Huesca</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="pais">País <span>*</span></label>
+          <div class="controls">
+            <select id="pais" name="pais" class="input-large">
+              <option>España</option>
+              <option>Japon</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="iban">IBAN <span>*</span></label>
+          <div class="controls">
+            <input id="iban" name="iban" type="text" placeholder="Iban" class="input-medium" required="">
+          </div>
+        </div>
+
+        <!-- Multiple Radios -->
+        <div class="control-group">
+          <label class="control-label" for="pago">Forma de pago <span>*</span></label>
+          <div class="controls">
+            <label class="radio" for="pago-0">
+              <input type="radio" name="pago" id="pago-0" value="Mensual" checked="checked">
+              Mensual
+            </label>
+            <label class="radio" for="pago-1">
+              <input type="radio" name="pago" id="pago-1" value="Trimestral">
+              Trimestral
+            </label>
+            <label class="radio" for="pago-2">
+              <input type="radio" name="pago" id="pago-2" value="Anual">
+              Anual
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="datos_acceso">
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="usuario">Usuario <span>*</span></label>
+          <div class="controls">
+            <input id="usuario" name="usuario" type="text" placeholder="usuario" class="input-medium" required="">
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="control-group">
+          <label class="control-label" for="pass">Contraseña <span>*</span></label>
+          <div class="controls">
+            <input id="pass" name="pass" type="password" placeholder="Contraseña" class="input-large" required="">
+            <p class="help-block">La contraseña debe contener numeros y letras, y 4 carácteres como minímo</p>
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="control-group">
+          <label class="control-label" for="pass2">Contraseña <span>*</span></label>
+          <div class="controls">
+            <input id="pass2" name="pass2" type="password" placeholder="Contraseña" class="input-large">
+            <p class="help-block">Introduzca de nuevo su contraseña</p>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+          <label class="control-label" for="enviar">Enviar </label>
+          <div class="controls">
+            <button id="enviar" name="enviar" class="btn btn-success">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -28,8 +258,34 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js(.) scripts/plugins.js -->
+        <script src="bower_components/bootstrap/js/affix.js"></script>
+        <script src="bower_components/bootstrap/js/alert.js"></script>
+        <script src="bower_components/bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/bootstrap/js/modal.js"></script>
+        <script src="bower_components/bootstrap/js/transition.js"></script>
+        <script src="bower_components/bootstrap/js/button.js"></script>
+        <script src="bower_components/bootstrap/js/popover.js"></script>
+        <script src="bower_components/bootstrap/js/carousel.js"></script>
+        <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/bootstrap/js/collapse.js"></script>
+        <script src="bower_components/bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>
+
