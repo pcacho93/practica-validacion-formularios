@@ -4,29 +4,6 @@ $(document).ready(function() {
 
 
 
-    //efectos cambios de formulario
-    $('#anterior').on('click', function() {
-        
-        $('#dFacturacion').fadeOut(800, function() {
-            $('#dPersonales').fadeIn(1000);
-        });
-    });
-
-
-    $('#anterior2').on('click', function() {
-     
-        $('#dUsuario').fadeOut(800, function() {
-            $('#dFacturacion').fadeIn(1000);
-        });
-    });
-
-    $('#anterior3').on('click', function() {
-       
-        $('#success').fadeOut(800, function() {
-            $('#dUsuario').fadeIn(1000);
-        });
-    });
-
     //permitir visualizar password
     $('.unmask').on('click', function() {
         if ($(this).prev('input').attr('type') == 'password') {
@@ -39,16 +16,16 @@ $(document).ready(function() {
 
     
     //disparadores eventos
-    $('input[name=cliente]', '#dFacturacion').on('change', clienteSwitch);
-    $('input[name=periodo]', '#dFacturacion').on('change', verificarCambios);
-    $('select[name=pais]', '#dFacturacion').on('change', verificarCambios);
-    $('#dFacturacion').on('change', 'select[name=prov]', verificarCambios);
-    $('input[name=cp]', '#dFacturacion').on('change', verificarCambios);
+    $('input[name=cliente]', '#formulario').on('change', clienteSwitch);
+    $('input[name=periodo]', '#formulario').on('change', verificarCambios);
+    $('select[name=pais]', '#formulario').on('change', verificarCambios);
+    $('#formulario').on('change', 'select[name=prov]', verificarCambios);
+    $('input[name=cp]', '#formulario').on('change', verificarCambios);
 
 
     //funcion cambio particular/empresa
     function clienteSwitch() {
-        if ($('input[name=cliente]:checked', '#dFacturacion').val() === 'particular') {
+        if ($('input[name=cliente]:checked', '#formulario').val() === 'particular') {
             $('#cifNif').prop('placeholder', 'NIF');
             $('#fNombre').prop('placeholder', 'Nombre completo');
             $('#fNombre').val($('#nombre').val() + ' ' + $('#apellidos').val());
@@ -64,10 +41,10 @@ $(document).ready(function() {
     function verificarCambios() {
 
 
-            if ($('input[name=periodo]:checked', '#dFacturacion').val() === 'mensual') {
+            if ($('input[name=periodo]:checked', '#formulario').val() === 'mensual') {
                 $('#tipocuota').html('<strong>mensual</strong>');
                 $('#cuota').html('<strong>50</strong>');
-            } else if ($('input[name=periodo]:checked', '#dFacturacion').val() === 'trimestral') {
+            } else if ($('input[name=periodo]:checked', '#formulario').val() === 'trimestral') {
                 $('#tipocuota').html('<strong>trimestral</strong>');
                 $('#cuota').html('<strong>140</strong>');
             } else {
@@ -90,7 +67,7 @@ $(document).ready(function() {
                 $('#loc').html('<input type="text" name="localidad" id="localidad" placeholder="Localidad" /><span class="required"></span>');
             }
 
-            if ($('input[name=cliente]:checked', '#dFacturacion').val() === 'particular') {
+            if ($('input[name=cliente]:checked', '#formulario').val() === 'particular') {
                 $('#cifNif').prop('placeholder', 'NIF');
                 $('#fNombre').prop('placeholder', 'Nombre completo');
                 $('#fNombre').val($('#nombre').val() + ' ' + $('#apellidos').val());
@@ -100,7 +77,7 @@ $(document).ready(function() {
 
     //VALIDACION FORM1
 
-    $('#dPersonales').validate({
+    $('#formulario').validate({
         errorPlacement: function(error, element) {
             error.appendTo(element.parent("div"));
         },
@@ -120,35 +97,21 @@ $(document).ready(function() {
             mailv: {
                 required: true,
                 equalTo: '#mail'
-            }
-
-        },
-        submitHandler: function() {
-                verificarCambios();
-                $('#dPersonales').fadeOut(800, function() {
-                    $('#dFacturacion').fadeIn(1000);
-                });
-
-                $('#dFacturacion').validate({
-                    onkeyup: false,
-                    errorPlacement: function(error, element) {
-                        error.appendTo(element.parent("div"));
-                    },
-                    rules: {
-                        cifNif: {
+            },
+             cifNif: {
                             required: true,
                             nifES: function() { //additional
-                                if ($('input[name=cliente]:checked', '#dFacturacion').val() === 'particular') {
+                                if ($('input[name=cliente]:checked', '#formulario').val() === 'particular') {
                                     return true;
                                 }
                             },
                             cifES: function() { //additional
-                                if ($('input[name=cliente]:checked', '#dFacturacion').val() === 'empresa') {
+                                if ($('input[name=cliente]:checked', '#formulario').val() === 'empresa') {
                                     return true;
                                 }
                             },
                             remote: function() {
-                                if ($('input[name=cliente]:checked', '#dFacturacion').val() === 'particular') {
+                                if ($('input[name=cliente]:checked', '#formulario').val() === 'particular') {
                                     return "php/validar_nif_db.php"
                                 }
                             }
@@ -178,20 +141,8 @@ $(document).ready(function() {
                         iban: {
                             required: true,
                             iban: true
-                        }
-                    },
-                    submitHandler: function() {
-                           
-                            $('#dFacturacion').fadeOut(800, function() {
-                                $('#dUsuario').fadeIn(1000);
-                            });
-
-                            $('#dUsuario').validate({
-                                errorPlacement: function(error, element) {
-                                    error.appendTo(element.parent("div"));
-                                },
-                                rules: {
-                                    usuario: {
+                        },
+                        usuario: {
                                         required: true,
                                         minlength: 4
                                     },
@@ -218,24 +169,14 @@ $(document).ready(function() {
                                         required: true,
                                         equalTo: '#password'
                                     }
-                                },
-                                submitHandler: function() {
-                                    
-                                    $('#dUsuario').fadeOut(800, function() {
-                                        $('#success').fadeIn(1000);
-                                    });
-
-                                    $('#success').validate();
-                                }
-                            }); // //VALIDATION 03 />
-
-                        } //SUBMIT HANDLER 02 />
-
-                }); //VALIDATION 02 />
 
 
-            } //SUBMIT HANDLER 01 />
-    }); // VALIDATION 01 />
+
+        }, //cierra rules 1
+        
+
+        });
+ 
 
 
 }); //DOCUMENT READY />
