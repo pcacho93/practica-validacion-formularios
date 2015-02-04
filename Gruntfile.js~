@@ -1,4 +1,4 @@
-// Generated on 2015-01-29 using
+// Generated on 2015-01-15 using
 // generator-webapp 0.5.1
 'use strict';
 
@@ -294,12 +294,6 @@ module.exports = function (grunt) {
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= config.app %>/php',
-          dest: '<%= config.dist %>/php/',
-          src: '{,*/}*.php'
         }]
       },
       styles: {
