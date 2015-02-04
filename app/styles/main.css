@@ -1,4 +1,11 @@
-
+.git 
+{
+    max-width: 100px
+    left: 50px;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+}
 
 body {
      background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/08/30/12087/3574f899daef41d2f145eba13ff7840f.jpg');
@@ -179,13 +186,13 @@ body {
 
 .radius {
  background: none repeat scroll 0 0 #eee;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    display: block;
-    margin: 20px auto;
-    padding: 15px 15px 15px 40px;
-    width: 600px;
-    transition: 2s all;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        display: block;
+        margin: 20px auto;
+        padding: 15px;
+        transition: none 0s ease 0s ;
+        width: auto;
 }
     
 }

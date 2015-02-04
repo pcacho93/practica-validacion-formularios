@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Práctica validación formularios | Pablo Cacho / Alicia Arraez </title>
+    <title>Práctica validación formularios | Pablo Cacho | Alicia Arraez </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -20,11 +20,15 @@
 </head>
 
 <body>
+<a href="https://github.com/pcacho93/practica-validacion-formularios" >
+    <img src="http://fc05.deviantart.net/fs71/i/2012/223/4/3/github_flurry_ios_style_icon_by_flakshack-d5ariic.png" class="git" style="width:70px;">
+</a>
 
     
     <form action="#" method="POST" id="formulario" class="big-form" novalidate>
         
         <div class="wrap">
+
         <h3>Datos personales</h3>
             <div>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
@@ -401,22 +405,24 @@
             </div>
         
         
-            
+           <div class="center"> 
             <input type="submit" value="Finalizar" name="submit3" />
+            </div> 
+          
         </div>
-    
 
-    
+    </form>
+
+   <form style="display: none" class="wrap" id="success" action="#" method="POST" novalidate>
         <h3>REGISTRO COMPLETADO</h3>
         <p>Se va a proceder a su alta.</p>
         <p>Se efectuara un cobro a su cuenta por valor de
         <span id="cuota"></span> € en concepto de su cuota <span id="tipocuota"></span></p>
         <div class="center">
-            <span id="anterior3" >Cancelar</span>
-            <input type="submit" value="Aceptar" name="submit4" />
+            <span id="anterior3" class="paginate">Cancelar</span>
+            <input class="paginate" type="submit" value="Aceptar" name="submit4" />
         </div>
     </form>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
