@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Práctica validación formularios | Miguel Pérez Pellicer </title>
+    <title>Práctica validación formularios | Pablo Cacho / Alicia Arraez </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -22,9 +22,10 @@
 <body>
 
     
-    <form action="#" method="POST" id="dPersonales" class="big-form" novalidate>
-        <h3>Datos personales</h3>
+    <form action="#" method="POST" id="formulario" class="big-form" novalidate>
+        
         <div class="wrap">
+        <h3>Datos personales</h3>
             <div>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
                 <span class="required"></span>
@@ -46,8 +47,9 @@
                 <span class="required"></span>
             </div>
         </div>
-        <h3>¿Cómo nos has conocido?</h3>
+        
         <div class="wrap">
+        <h3>¿Cómo nos has conocido?</h3>
             <div>
                 <select name="refered" id="refered">
                     <option value="0">Prefiero no contestar</option>
@@ -58,14 +60,11 @@
                 </select>
             </div>
         </div>
-        <div class="center">
-            <input class="paginate" type="submit" value="Siguiente" name="submit" />
-        </div>
-    </form>
+        
 
-    <form style="display:none;" action="#" method="POST" id="dFacturacion" novalidate>
-        <h3>Demandante</h3>
-
+       
+        <div class="radius">
+         <h3>Demandante</h3>
         <div class="switch-toggle switch-candy">
             <input id="particular" name="cliente" value="particular" type="radio" checked>
             <label for="particular">Particular</label>
@@ -75,9 +74,11 @@
 
             <a></a>
         </div>
+        </div>
 
-        <h3>Datos de facturación</h3>
+        
         <div class="wrap">
+        <h3>Datos de facturación</h3>
             <div>
                 <input type="text" name="cifNif" id="cifNif" placeholder="NIF" />
                 <span class="required"></span>
@@ -363,6 +364,8 @@
                 <span class="required"></span>
             </div>
         </div>
+        
+        <div class="radius">
         <h3>Forma de pago</h3>
         <div class="switch-toggle switch-3 switch-candy withmargin">
             <input id="mensual" name="periodo" value="mensual" type="radio" checked>
@@ -376,16 +379,11 @@
 
             <a></a>
         </div>
-        <div class="center">
-            <span id="anterior" class="paginate">Anterior</span>
-            <input class="paginate" type="submit" value="Siguiente" name="submit2" />
         </div>
-    </form>
-
-
-    <form style="display:none;" action="#" method="POST" id="dUsuario" novalidate>
-        <h3>Datos de usuario</h3>
+      
+        
         <div class="wrap">
+        <h3>Datos de usuario</h3>
             <div>
                 <input type="text" name="usuario" id="usuario" readonly placeholder="Nombre de usuario" />
                 <span class="required"></span>
@@ -401,23 +399,24 @@
                 <span title="Mask/Unmask" type="button" class="unmask"></span>
                 <span class="required"></span>
             </div>
+        
+        
+            
+            <input type="submit" value="Finalizar" name="submit3" />
         </div>
-        <div class="center">
-            <span id="anterior2" class="paginate">Anterior</span>
-            <input class="paginate" type="submit" value="Finalizar" name="submit3" />
-        </div>
-    </form>
+    
 
-    <form style="display: none" class="wrap" id="success" action="#" method="POST" novalidate>
+    
         <h3>REGISTRO COMPLETADO</h3>
         <p>Se va a proceder a su alta.</p>
         <p>Se efectuara un cobro a su cuenta por valor de
         <span id="cuota"></span> € en concepto de su cuota <span id="tipocuota"></span></p>
         <div class="center">
-            <span id="anterior3" class="paginate">Cancelar</span>
-            <input class="paginate" type="submit" value="Aceptar" name="submit4" />
+            <span id="anterior3" >Cancelar</span>
+            <input type="submit" value="Aceptar" name="submit4" />
         </div>
     </form>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
