@@ -15,10 +15,10 @@ try {
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
 //$_REQUEST['email'] = "pepito@hotmail.com";
-if (isset($_REQUEST['mail'])) {
+if (isset($_REQUEST['email'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
-   // echo $_REQUEST['mail'];
-    $email = $_REQUEST['mail'];
+    //echo $_REQUEST['email'];
+    $email = $_REQUEST['email'];
     $sql = $db->prepare("SELECT * FROM usuarios WHERE email=?");
     $sql->bindParam(1, $email, PDO::PARAM_STR);
     $sql->execute();
@@ -30,7 +30,7 @@ if (isset($_REQUEST['mail'])) {
      */
     $valid = 'true';
     if ($sql->rowCount() > 0) {
-        $valid= '"Email en uso."';
+        $valid= 'false';
     } else {
        $valid='true';
     }

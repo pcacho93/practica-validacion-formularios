@@ -19,17 +19,7 @@ body {
 
 
 
-.unmask {
-    background: url("../images/eye.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    display: inline-block;
-    height: 20px;
-    left: -10px;
-    margin-left: -28px;
-    position: relative;
-    top: 2px;
-    width: 20px;
-    cursor: pointer;
-}
+
 
 .wrap {
     background: none repeat scroll 0 0 #eee;

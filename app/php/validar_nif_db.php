@@ -19,7 +19,7 @@ if (isset($_REQUEST['cifNif'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
     //echo $_REQUEST['documentNumber'];
     $nif = $_REQUEST['cifNif'];
-    $sql = $db->prepare("SELECT * FROM usuario WHERE nifcif=?");
+    $sql = $db->prepare("SELECT * FROM usuarios WHERE nicif=?");
     $sql->bindParam(1, $nif, PDO::PARAM_STR);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 

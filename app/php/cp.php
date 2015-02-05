@@ -15,16 +15,17 @@ try {
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
 //$_REQUEST['zip'] = "12";
-if (isset($_REQUEST['cp'])) {
+$prueba=$_POST['zip'];
+echo"$prueba";
+if (isset($_POST['zip'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
-   //echo $_POST['cp'];
-    if (strlen($_REQUEST['cp']) >= 2){
-	    $zip = substr($_REQUEST['cp'], 0, 2);
-    } else {
-	    $zip = $_REQUEST['cp'];
-    }
-    $sql = $db->prepare("SELECT provincia FROM provincias WHERE id_provincia=?");
-    $sql->bindParam(1, $zip, PDO::PARAM_STR);
+    //echo $_REQUEST['email'];
+    ?>
+alert("hola");
+    <?php
+   
+    $sql = $db->prepare("SELECT Municipio,CodPostal FROM t_municipios WHERE CodPostal=?");
+    $sql->bindParam(1,$prueba);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
      * ejecutada por el correspondiente objeto PDOStatement.Si la última sentencia SQL ejecutada por el objeto PDOStatement 
@@ -32,16 +33,33 @@ if (isset($_REQUEST['cp'])) {
      * Sin embargo, este comportamiento no está garantizado para todas las bases de datos y no debería confiarse en él para 
      * aplicaciones portables.
      */
+    /*
     $valid = 'true'; 
     if ($sql->rowCount() > 0) {
-       $valid= 'true';
+        $valid= 'false';
     } else {
-       $valid='"Codigo postal incorrecto para España."';
+       $valid='true';
     }
-         
+    
+    */
+   // $okey = $sql->fetch(); 
+       ?>
+alert("llega"); 
+    <?php  
+    while ($row=$sql->fetch()) {   
+           ?>
+alert("entra");
+    <?php
+     $opciones= "<option ='{$row['CodPostal']}'>{$row['Municipio']}</option>";
+  
+    
+      }
+     
+    echo $opciones;
+   
     
 }
 $sql=null;
 $db = null;
-echo $valid;
+echo $okey[0];
 ?>
