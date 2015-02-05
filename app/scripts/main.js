@@ -65,7 +65,15 @@ $("#formulario").validate({
                     }
                     
                     
-                }
+                },
+                submitHandler: function() {
+                                    
+                                    $('#formulario').fadeOut(800, function() {
+                                        $('#success').fadeIn(1000);
+                                    });
+
+                                    $('#success').validate();
+                                }
                 });
 //si el cp tiene menos de 5 cifras relleno con ceros a la izq
 //cp entre 01000 y 52999
