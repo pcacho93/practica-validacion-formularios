@@ -2,9 +2,9 @@
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 //ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
-$dbinfo = "mysql:dbname=dbname;host=localhost";
-$user = "user";
-$pass = "pass";
+$dbinfo = "mysql:dbname=formulario;host=localhost";
+$user = "root";
+$pass = "root";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
@@ -19,7 +19,7 @@ if (isset($_REQUEST['cifNif'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
     //echo $_REQUEST['documentNumber'];
     $nif = $_REQUEST['cifNif'];
-    $sql = $db->prepare("SELECT * FROM usuario WHERE nif=?");
+    $sql = $db->prepare("SELECT * FROM usuario WHERE nifcif=?");
     $sql->bindParam(1, $nif, PDO::PARAM_STR);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 

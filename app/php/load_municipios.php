@@ -8,7 +8,7 @@ if (strlen($_POST['cp']) == 4) {
 $cp = substr($zip,0,2);
  //creamos una nueva conexion mediante la clase PDO capturando errores con try
             try {
-                $conexion = new PDO("mysql:host=localhost;dbname=dbname;charset=utf8","user","pass");
+                $conexion = new PDO("mysql:host=localhost;dbname=formulario;charset=utf8","root","root");
                 
                 //HABILTAMOS EL MODO DE RRORES DE PDO
                 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,7 +22,7 @@ $cp = substr($zip,0,2);
               try {
                 //lanzamos el metodo query para las consultas dcl
                 //capturar errores con excepciones
-                 $sql = $conexion->prepare("SELECT Municipio FROM t_municipios WHERE CodPostal=?");
+                 $sql = $conexion->prepare("SELECT nombre FROM municipios WHERE id_provincia=?");
                  $sql->bindParam(1, $zip, PDO::PARAM_STR);       
                 
                 //recurremos el objeto PDOStatment con el metodo fetch

@@ -2,9 +2,9 @@
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
-$dbinfo = "mysql:dbname=dbname;host=localhost";
-$user = "user";
-$pass = "pass";
+$dbinfo = "mysql:dbname=formulario;host=localhost";
+$user = "root";
+$pass = "root";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
@@ -23,7 +23,7 @@ if (isset($_REQUEST['cp'])) {
     } else {
 	    $zip = $_REQUEST['cp'];
     }
-    $sql = $db->prepare("SELECT Provincia FROM t_provincias WHERE CodProv=?");
+    $sql = $db->prepare("SELECT provincia FROM provincias WHERE id_provincia=?");
     $sql->bindParam(1, $zip, PDO::PARAM_STR);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
