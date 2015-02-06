@@ -1,4 +1,4 @@
-// Generated on 2015-01-29 using
+// Generated on 2015-01-15 using
 // generator-webapp 0.5.1
 'use strict';
 
@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '/var/www/dist'
   };
 
   // Define the configuration for all the tasks
@@ -294,12 +294,18 @@ module.exports = function (grunt) {
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= config.app %>/php',
-          dest: '<%= config.dist %>/php/',
-          src: '{,*/}*.php'
+        }, {
+          src: '<%= config.app %>/php/validar_email_db.php',
+          dest: '<%= config.dist %>/php/validar_email_db.php'
+        }, {
+          src: '<%= config.app %>/php/validar_nif_db.php',
+          dest: '<%= config.dist %>/php/validar_nif_db.php'
+        }, {
+          src: '<%= config.app %>/php/cp.php',
+          dest: '<%= config.dist %>/php/cp.php'
+        }, {
+          src: '<%= config.app %>/php/enviar.php',
+          dest: '<%= config.dist %>/php/enviar.php'
         }]
       },
       styles: {

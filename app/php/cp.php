@@ -50,7 +50,7 @@ alert("llega");
            ?>
 alert("entra");
     <?php
-     $opciones= "<option ='{$row['CodPostal']}'>{$row['Municipio']}</option>";
+     $opciones.= "<option ='{$row['CodPostal']}'>{$row['Municipio']}</option>";
   
     
       }

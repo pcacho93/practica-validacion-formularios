@@ -65,26 +65,7 @@ $("#formulario").validate({
                     }
                     
                     
-                },
-                submitHandler: function() {
-                        var pago = $('#Pago').val();
-                        if(pago==='Mensual'){
-                            pago='50€';
-                            alert('Dado de alta correctamente, próxima cuota '+pago, 'Alert Dialog');
-                            
-                        }
-                        else if(pago==='Trimestral'){
-                            pago='140€';
-                            alert('Dado de alta correctamente, próxima cuota '+pago, 'Alert Dialog');
-                            
-                        }
-                        else{
-                            pago='550€';
-                            alert('Dado de alta correctamente, próxima cuota '+pago, 'Alert Dialog');
-                            
-                        }
-                        
-                    }
+                }//fin rules
                 });
 //si el cp tiene menos de 5 cifras relleno con ceros a la izq
 //cp entre 01000 y 52999

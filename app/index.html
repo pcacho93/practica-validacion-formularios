@@ -25,7 +25,7 @@
 </a>
 
     
-    <form action="#" method="POST" id="formulario" class="big-form" novalidate>
+    <form action="php/enviar.php" method="POST" id="formulario" class="big-form">
         
         <div class="wrap">
 
@@ -119,14 +119,15 @@
 
         
         <div class="radius">
-        <h3>Forma de pago</h3>
-        <div class="switch-toggle switch-3 switch-candy withmargin">
-            <select id="Pago" name="Pago" class="form-control">
+        <label class="col-md-4 control-label" for="pago">Tipo de Pago:</label>
+  <div class="col-md-4">
+            <select id="Pago" name="Pago"  class="form-control">
           <option>Mensual</option>
           <option>Trimestral</option>
           <option>Anual</option>
         </select>
-            
+        </div>
+
         </div>
         </div>
       
@@ -134,55 +135,45 @@
         <div class="wrap">
         <h3>Datos de usuario</h3>
             <div>
-                <input type="text" name="usuar io" id="usuario" readonly placeholder="Nombre de usuario" />
+                <input type="text" name="usuario" id="usuario" readonly placeholder="Nombre de usuario" />
                 <span class="required"></span>
             </div>
             <div>
                 <input type="password" name="password" id="pass" placeholder="Contraseña" />
-                <span title="Mask/Unmask" type="button" class="unmask"></span>
+                
                 <span class="required"></span>
-            </div>
-            <span class="passinfo">Debil</span><meter value="0" id="PassValue" max="100"></meter>
-            <div>
+             <meter value="0" id="PassValue"  low="30" high="7" min="0" max="100"></meter>
                 <input type="password" name="pass2" id="pass2" placeholder="Repita su Contraseña" />
-                <span title="Mask/Unmask" type="button" class="unmask"></span>
+                
                 <span class="required"></span>
             </div>
         
         
            <div class="center"> 
-            <input type="submit" value="Finalizar" class="paginate" name="submit3" />
+            <input type="submit" value="Finalizar" name="submit3" />
             </div> 
           
         </div>
 
     </form>
 
-   <form style="display: none" class="wrap" id="success" action="#" method="POST" novalidate>
-   <div class="wrap">
-        <h3>REGISTRO COMPLETADO</h3>
-        <p>Se va a proceder a su alta.</p>
-        <p>Se efectuara un cobro a su cuenta por valor de
-        <span id="cuota"></span> € en concepto de su cuota <span id="tipocuota"></span></p>
-        <div class="center">
-            <span id="anterior3" class="paginate">Cancelar</span>
-            <input class="paginate" type="submit" value="Aceptar" name="submit4" />
-        </div>
-        </div>
-    </form>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-validate/dist/jquery.validate.js"></script>
-    <script src="bower_components/jquery.complexify.js/jquery.complexify.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/messages_es.js"></script>
-    <script src="scripts/additional-methods.js"></script>
     <script src="scripts/main.js"></script>
+        <script src="scripts/iban.js"></script>
+        <script src="scripts/cifES.js"></script>        
+        <script src="scripts/nifES.js"></script>
+        <script src="scripts/jquery.complexify.banlist.js"></script>
+        <script src="scripts/jquery.complexify.js"></script>
+        <script src="scripts/mesagges_es.js"></script>
     <!-- endbuild -->
 </body>
 

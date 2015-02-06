@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "jquery-validate": "~1.13.1",
-    "css-toggle-switch": "~3.1.1",
-    "jquery.complexify.js": "*"
+    "css-toggle-switch": "~3.1.1"    
   }
 }
