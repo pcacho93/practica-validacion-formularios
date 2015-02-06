@@ -65,7 +65,27 @@ $("#formulario").validate({
                     }
                     
                     
-                }//fin rules
+                },//fin rules
+                  submitHandler: function() {
+                        var pago = $('#Pago').val();
+                        if(pago==='Mensual'){
+                            pago='50€';
+                            alert('Dado de alta correctamente, cuota mensual '+pago, 'Alert Dialog');
+                            window.location.href='https://github.com/pcacho93';
+                        }
+                        else if(pago==='Trimestral'){
+                            pago='140€';
+                            alert('Dado de alta correctamente, cuota trimestral '+pago, 'Alert Dialog');
+                            window.location.href='https://github.com/pcacho93';
+                        }
+                        else{
+                            pago='550€';
+                            alert('Dado de alta correctamente, cuota anual '+pago, 'Alert Dialog');
+                            window.location.href='https://github.com/pcacho93';
+                        }
+                        
+                    }
+
                 });
 //si el cp tiene menos de 5 cifras relleno con ceros a la izq
 //cp entre 01000 y 52999
