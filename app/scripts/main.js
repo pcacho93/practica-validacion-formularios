@@ -66,6 +66,11 @@ $("#formulario").validate({
                     
                     
                 },//fin rules
+                 messages: {
+                              email: {
+                                      remote: "Este correo ya esta en uso."
+                                      }
+                            },
                   submitHandler: function() {
                         var pago = $('#Pago').val();
                         if(pago==='Mensual'){

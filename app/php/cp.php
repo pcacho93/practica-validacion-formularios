@@ -2,6 +2,7 @@
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
+header('Access-Control-Allow-Origin: *');
 $dbinfo = "mysql:dbname=pablocacho_formulario;host=localhost";
 $user = "pablocacho_a";
 $pass = "123456";
