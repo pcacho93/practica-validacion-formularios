@@ -5,7 +5,7 @@
 header('Access-Control-Allow-Origin: *');
 $dbinfo = "mysql:dbname=pablocacho_formulario;host=localhost";
 $user = "pablocacho_a";
-$pass = "123456";
+$pass = "aa12345";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
