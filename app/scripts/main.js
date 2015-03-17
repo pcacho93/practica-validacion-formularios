@@ -2,10 +2,12 @@ $("#formulario").validate({
                
                 rules: {
                      nombre: {
-                        required: true
+                        required: true,
+                        spanishlettersspace: true
                     },
                      apellidos: {
-                       required:true
+                       required:true,
+                      spanishlettersspace: true
                         
                     },
                     email: {
@@ -69,22 +71,32 @@ $("#formulario").validate({
                                       remote: "Este correo ya esta en uso."
                                       }
                             },
-                  submitHandler: function() {
+                     submitHandler: function() {
                         var pago = $('#Pago').val();
                         if(pago==='Mensual'){
                             pago='50€';
-                            alert('Dado de alta correctamente, cuota mensual '+pago, 'Alert Dialog');
-                            window.location.href='https://github.com/pcacho93';
+                            var c =confirm('Dado de alta correctamente, próxima cuota mensual '+pago);
+                            if(c){
+                                window.location.href='https://github.com/pcacho93';    
+                            }
+                            
                         }
                         else if(pago==='Trimestral'){
                             pago='140€';
-                            alert('Dado de alta correctamente, cuota trimestral '+pago, 'Alert Dialog');
-                            window.location.href='https://github.com/pcacho93';
+                            var c =confirm('Dado de alta correctamente, próxima cuota trimestral '+pago);
+                            if(c){
+                                window.location.href='https://github.com/pcacho93';    
+                            }
+                            
                         }
                         else{
                             pago='550€';
-                            alert('Dado de alta correctamente, cuota anual '+pago, 'Alert Dialog');
-                            window.location.href='https://github.com/pcacho93';
+                            var c = confirm('Dado de alta correctamente, próxima cuota anual '+pago);
+                            if(c){
+                                window.location.href='https://github.com/pcacho93';    
+                            }
+                            
+
                         }
                         
                     }
@@ -238,3 +250,11 @@ jQuery.validator.addMethod("controlPass", function(value,element) {
   return true;
   }
 }, "Complejidad demasiado baja");
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Por favor, solo letras");
+
+jQuery.validator.addMethod("spanishlettersspace", function(value, element) {
+  return this.optional(element) || /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/i.test(value);
+}, "Por favor, solo letras y espacios");

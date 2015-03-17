@@ -3,8 +3,8 @@
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
 header('Access-Control-Allow-Origin: *');
-$dbinfo = "mysql:dbname=pablocacho_formulario;host=localhost";
-$user = "pablocacho_a";
+$dbinfo = "mysql:dbname=aliciaarraez_formulario;host=localhost";
+$user = "aliciaarraez_a";
 $pass = "aa12345";
 //Nos intentamos conectar:
 try {
